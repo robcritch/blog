@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "description": "\"# blog\"",
   "main": "src/app.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
-    "test": "test"
+    "start": "node src/app.js",
+    "watch": "node_modules/.bin/nodemon src/app.js",
+    "test": "node_modules/.bin/mocha --watch"
   },
   "repository": {
     "type": "git",
@@ -18,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/robcritch/blog/issues"
   },
-  "homepage": "https://github.com/robcritch/blog#readme"
+  "homepage": "https://github.com/robcritch/blog#readme",
+  "dependencies": {
+    "elasticsearch": "13.0.1",
+    "express": "4.15.3",
+    "mocha": "3.4.2"
+  }
 }
