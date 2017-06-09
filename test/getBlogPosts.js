@@ -2,8 +2,9 @@ const assert = require('assert')
 
 describe('Given no blog posts existing', () => {
 	it('returns no blog posts', (done) => {
+		const blogPosts = new BlogPosts()
 
-		retrievePosts()
+		blogPosts.retrievePosts()
 		.then(result => {
 			assert.deepEqual(result, {})
 			done()
@@ -12,6 +13,12 @@ describe('Given no blog posts existing', () => {
 	})
 })
 
-const retrievePosts = () => {
-	return Promise.resolve({})
+class BlogPosts {
+	constructor() {
+		this.blogPosts = {}
+	}
+
+	retrievePosts() {
+		return Promise.resolve(this.blogPosts)
+	}
 }
