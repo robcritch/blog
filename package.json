@@ -1,0 +1,22 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "\"# blog\"",
+  "main": "src/app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robcritch/blog.git"
+  },
+  "author": "Rob Critch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robcritch/blog/issues"
+  },
+  "homepage": "https://github.com/robcritch/blog#readme"
+}
