@@ -1,4 +1,6 @@
 const assert = require('assert')
+const FakeBlogPostDataSource = require('./testDoubles/fakeBlogPostDataSource')
+const BlogPosts = require('../src/blogPosts')
 
 describe('Given no blog posts existing', () => {
 	it('returns no blog posts', (done) => {
@@ -32,34 +34,4 @@ describe('Given a blog post existing', () => {
 	})
 })
 
-class FakeBlogPostDataSource {
-	constructor() {
-		this.blogPosts = []
-	}
 
-	subscribe(onBlogPostReceived) {
-		this.blogPosts.forEach(blogPost => onBlogPostReceived(blogPost))
-	}
-
-	withBlogPost(blogPost) {
-		this.blogPosts.push(blogPost)
-		return this
-	}
-
-}
-
-class BlogPosts {
-	constructor(blogPostDataSource) {
-		this.blogPosts = []
-		this.blogPostDataSource = blogPostDataSource
-		this.blogPostDataSource.subscribe(this.addBlogPost.bind(this))
-	}
-
-	retrievePosts() {
-		return Promise.resolve(this.blogPosts)
-	}
-
-	addBlogPost(blogPost) {
-		this.blogPosts.push(blogPost)
-	}
-}
