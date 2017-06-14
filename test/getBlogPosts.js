@@ -33,5 +33,3 @@ describe('Given a blog post existing', () => {
 		.catch(err => done(err))
 	})
 })
-
-
